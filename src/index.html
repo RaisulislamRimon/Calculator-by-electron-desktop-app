@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- css stylesheet -->
+	<link rel="stylesheet" href="index.css">
+	<!-- calculator icon -->
+	<link rel="icon" href="icon/calculator (1).png">
+	<!-- this is a title -->
+	<title>Calculator - Developed by MD. RAISUL ISLAM RIMON</title>
+</head>
+
+<body>
+	<header>
+		<!-- <h1 style="text-align: center; font-family: Consolas; font-size: 2.5rem; text-decoration: underline; text-transform: uppercase; color: #788e78; margin-top: -10px; background-color: burlywood; margin:1px 250px;"><a href="www.google.com">ICT Online Training Center</a></h1> -->
+		<h1
+			style="text-align: center; font-family: Consolas; font-size: 2.5rem; text-transform: uppercase; color: rgb(28 103 96 / 64%); margin-top: -10px; background-color: #e2dfdb; margin: 1px 250px; -webkit-text-stroke: thin;">
+			Calculator</h1>
+	</header>
+	<main>
+		<!-- this is the main core system of my calculator program  -->
+		<section>
+			<div class="container">
+				<div id="calculator_details">
+					<!-- This is a calculator program online  -->
+					<h1>This is a very basic calculator program</h1>
+					<h5>You can use it free. No charges will be apply...</h5>
+				</div>
+				<div id="calculator_display">
+					<!-- input box where you see all of your data you input -->
+					<input type="text" id="result" name="name"><br>
+				</div>
+				<!-- calculator buttons list  -->
+				<div id="calculator_btn">
+					<div>
+						<input type="button" class="btn col-25" value="C" onclick="clearResult()">
+						<input type="button" class="btn col-25" value="DEL" onclick="deleteNumber()">
+						<input type="button" class="btn col-25" value="%" onclick="insertNumber('%')">
+						<input type="button" class="btn col-25" value="/" onclick="insertNumber('/')">
+					</div>
+					<div>
+						<input type="button" class="btn col-25" value="7" onclick="insertNumber(7)">
+						<input type="button" class="btn col-25" value="8" onclick="insertNumber(8)">
+						<input type="button" class="btn col-25" value="9" onclick="insertNumber(9)">
+						<input type="button" class="btn col-25" value="x" onclick="insertNumber('*')">
+					</div>
+					<div>
+						<input type="button" class="btn col-25" value="4" onclick="insertNumber(4)">
+						<input type="button" class="btn col-25" value="5" onclick="insertNumber(5)">
+						<input type="button" class="btn col-25" value="6" onclick="insertNumber(6)">
+						<input type="button" class="btn col-25" value="-" onclick="insertNumber('-')">
+					</div>
+					<div>
+						<input type="button" class="btn col-25" value="1" onclick="insertNumber(1)">
+						<input type="button" class="btn col-25" value="2" onclick="insertNumber(2)">
+						<input type="button" class="btn col-25" value="3" onclick="insertNumber(3)">
+						<input type="button" class="btn col-25" value="+" onclick="insertNumber('+')">
+					</div>
+					<div>
+						<input type="button" class="btn col-25" value="00" onclick="insertNumber('00')">
+						<input type="button" class="btn col-25" value="0" onclick="insertNumber(0)">
+						<input type="button" class="btn col-25" value="." onclick="insertNumber('.')">
+						<input type="button" class="btn col-25 equal_btn" value="=" onclick="calculate()">
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- this is the footer part of my system -->
+	<footer>
+		<div class="container footer">
+			<p>Thanks for using this calculator.</p>
+		</div>
+	</footer>
+
+	<!-- jquery file -->
+	<script src="jquery-3.5.1.js"></script>
+	<!-- javascript file -->
+	<script>
+		// // my new keypress listener code starts here
+		// $(document).ready(function() {
+
+		// 	var string = "";
+
+		// 	/* Calculator input string */
+		// 	$(".value").click(function() {
+		// 		string += $(this).text();
+		// 		$("#calc").text(string);
+		// });
+		// // my new keypress listener code ends here
+
+		function insertNumber(number) {
+			var existingNumber = $("#result").val();
+			$("#result").val(existingNumber + number);
+		}
+
+		function clearResult() {
+			$("#result").val('');
+		}
+
+		function calculate() {
+			var calculationResult = eval($("#result").val());
+
+			$("#result").val("Ans : " + calculationResult);
+		}
+
+		function deleteNumber() {
+			var presentValue = $("#result").val();
+			if (presentValue != '') {
+				$("#result").val(presentValue.slice(0, -1));
+			}
+		}
+	</script>
+</body>
+
+</html>

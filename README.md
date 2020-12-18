@@ -6,4 +6,4 @@ I have used electron to do this project.
 
 If you think this works fine, then you can use it.
 
-<img src="icon/demo.png" alt="demo-electron-desktop-calculator-app">
+<img src="../icon/demo.png" alt="demo-electron-desktop-calculator-app">

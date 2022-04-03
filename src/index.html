@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- css stylesheet -->
 	<link rel="stylesheet" href="index.css">
+	<!-- kursor js -->
+	<link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css">
 	<!-- calculator icon -->
 	<link rel="icon" href="icon/calculator (1).png">
 	<!-- this is a title -->
@@ -113,6 +115,13 @@
 				$("#result").val(presentValue.slice(0, -1));
 			}
 		}
+	</script>
+		<script src="https://unpkg.com/kursor"></script>
+	<script type="text/javascript">
+		new kursor({
+			type: 1,
+			color: '#007d00'
+      		})
 	</script>
 </body>
 
